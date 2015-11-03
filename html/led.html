@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>LED IOT test</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <script src="jquery-1.11.3.min.js" type="text/javascript"></script>
+  <script src="scripts.js" type="text/javascript"></script>
+</head>
+
+<body>
+
+<div class="site">
+  <h1><a href="#">IOT Test with MQTT</a></h1>
+  <p>IOT test site by using MQTT<p>
+</div>
+
+<div class="menu">
+  <nav class="menu">
+  <ul>
+  <li><a href="#">Top</a></li>
+  <li><a href="#">Setup</a></li>
+  <li><a href="#">Link</a></li>
+  <ul>
+  </nav>
+</div>
+
+
+<div class="main_console">
+  <form action="cgi-bin/mqtt_web_if.rb" method="post">
+  <p>
+  <input type="checkbox" name="led1" value="1" checked="checked">LED1
+  <input type="checkbox" name="led2" value="2">LED2
+  <input type="checkbox" name="led3" value="3">LED3
+  </p>
+  <p>
+  <input type="submit" value="送信する">
+  </p>
+  </form>
+</div>
+
+<div class="ajax_res">
+  <button type="button" id="btnSay">ここをクリック</button>
+
+</div>
+
+<div class="ajax_res_work">
+
+</div>
+
+
+
+
+<div class="copyright">
+  <p>Created by IOT.dreamhosters.com</p>
+</div>
+
+
+</body>
+
+</html>
