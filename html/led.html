@@ -27,16 +27,9 @@
 
 
 <div class="main_console">
-  <form action="cgi-bin/mqtt_web_if.rb" method="post">
-  <p>
-  <input type="checkbox" name="led1" value="1" checked="checked">LED1
-  <input type="checkbox" name="led2" value="2">LED2
-  <input type="checkbox" name="led3" value="3">LED3
-  </p>
-  <p>
-  <input type="submit" value="送信する">
-  </p>
-  </form>
+  <p><input class="chkled" id="chkled1" type="checkbox" name="led1" value="ON">LED1</p>
+  <p><input class="chkled" id="chkled2" type="checkbox" name="led2" value="ON">LED2</p>
+  <p><input class="chkled" id="chkled3" type="checkbox" name="led3" value="ON">LED3</p>
 </div>
 
 <div class="ajax_res">
