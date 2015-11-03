@@ -21,8 +21,6 @@ end
 
 
 
-print "Content-type: text/html\n\n"
-
 cgi = CGI.new
 status_led1 = 0;
 status_led2 = 0;
@@ -63,4 +61,5 @@ File.open("content_led.html.erb",'r:utf-8'){|f|
   content = ERB.new(f.read).result(binding)
 }
 
-printf content
+print "Content-type: text/html\n\n"
+print content
