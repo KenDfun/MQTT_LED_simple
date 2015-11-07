@@ -6,17 +6,15 @@ require 'cgi'
 require 'erb'
 
 
-def save_status(status_led=[0,0,0])
+def get_status
   db = SQLite3::Database.new("iot.sqlite3")
-
-  db.transaction do
-    sql = "update led set status=? where id=?"
-    db.execute(sql, status_led[0], 0)
-    db.execute(sql, status_led[1], 1)
-    db.execute(sql, status_led[2], 2)
+  sql = "select status from led"
+  arry = []
+  db.execute(sql) do |row|
+    arry.push(row[0])
   end
-
   db.close
+  return arry
 end
 
 def out_html(led)
@@ -34,13 +32,7 @@ def out_html(led)
   print content
 end
 
-cgi = CGI.new
+status = [0,0,0]
+status = get_status()
 
-status_led = [];
-status_led[0] = cgi['led1']!='' ? 1 : 0
-status_led[1] = cgi['led2']!='' ? 1 : 0
-status_led[2] = cgi['led3']!='' ? 1 : 0
-
-
-save_status(status_led)
-# out_html(status_led)
+out_html(status)
