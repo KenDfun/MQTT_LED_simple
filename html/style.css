@@ -82,7 +82,16 @@ body {
 /* arrange the boxies horizontally organized */
 #led_switch {
 	margin-top: 20px;
+	margin-bottom: 20px;
 }
+#led_switch h1 {
+	margin-top: 0;
+	margin-bottom: 5px;
+	border-bottom: dotted 2px #dddddd;
+	color: #666666;
+	font-size: 18px;
+}
+
 
 #led_switch:after {
 	content: "";
@@ -94,12 +103,17 @@ body {
 	float: left;
 	margin-right: 10px;
 }
-#led1_switch {
+#led2_switch {
 	float: left;
+	margin-right: 10px;
+}
+#led3_switch {
+	float: left;
+	margin-right: 10px;
 }
 
 
-#led1_btn, #led2_btn{
+#led1_btn, #led2_btn, #led3_btn{
 	display:block;
 	cursor:pointer;    /*←これでカーソルを指先型に変化させます*/
 	background:none;    /*これ以降はデフォルトの枠を消す指定です*/
@@ -159,7 +173,7 @@ body {
 	}
 
 	/******* over 1000px *******/
-	.site, .menu, .main_console, .ajax_res, .copyright, #led_switch {
+	.site, .menu, .main_console, .ajax_res, .copyright, #led_switch, .ajax_res_work{
 		width: 840px;
 		margin-left: auto;
 		margin-right: auto;

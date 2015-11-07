@@ -8,6 +8,7 @@ require 'erb'
 
 def get_status
   db = SQLite3::Database.new("iot.sqlite3")
+  db.busy_timeout=60000
   sql = "select status from led"
   arry = []
   db.execute(sql) do |row|
@@ -19,8 +20,9 @@ end
 
 def out_html(led)
   str_led = []
+
   (0..2).each do |i|
-    str_led[i] = led[i]==1 ? "checked=\"checked\"" : ""
+    str_led[i] = led[i]==1 ? "button_on.png" : "button_off.png"
   end
 
   content = ""
